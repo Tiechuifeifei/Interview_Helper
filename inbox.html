@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My practice · Interview Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/coach.css">
+  <script src="vendor/supabase/supabase.js"></script>
+</head>
+<body class="coach">
+  <div id="demo"></div>
+  <header class="c-bar">
+    <a href="index.html" class="brand">Interview Coach <span>· My practice</span></a>
+    <span><a href="expert.html">Mock interview</a> · <a href="peer.html">Practise with Mia</a></span>
+  </header>
+  <main class="home" style="padding-top:32px">
+    <h1 style="font-size:30px">My practice &amp; feedback</h1>
+    <p class="lede" style="margin-bottom:24px">Your sessions, the AI's notes on your answers, and anything your coach has sent you.</p>
+    <div id="sessions"></div>
+  </main>
+  <script type="module" src="js/inbox.js"></script>
+</body>
+</html>

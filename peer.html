@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Practise with Mia · Interview Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/peer.css">
+  <script src="vendor/supabase/supabase.js"></script>
+</head>
+<body class="peer">
+  <div id="demo"></div>
+  <div class="p-app">
+    <header class="p-head">
+      <a href="index.html" class="p-back" aria-label="Back">‹</a>
+      <div class="p-avatar">M<i class="online"></i></div>
+      <div class="p-who"><b>Mia</b><span id="p-presence">here to practise with you</span></div>
+      <div class="p-tools">
+        <button class="p-icon" id="cam-toggle" aria-pressed="false" title="Turn camera on">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h8A2.5 2.5 0 0 1 16 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-8A2.5 2.5 0 0 1 3 16.5z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 10 5-3v10l-5-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path class="slash" d="M3 3l18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <a class="p-icon text" href="inbox.html" title="My practice">My practice</a>
+      </div>
+    </header>
+
+    <div class="p-pip hidden" id="pip"><video id="video" autoplay muted playsinline></video></div>
+
+    <main class="p-chat" id="chat" aria-live="polite"></main>
+
+    <footer class="p-composer" id="composer">
+      <div class="p-live hidden" id="live">
+        <div class="p-wave" id="wave"></div>
+        <span class="p-live-time" id="live-time">0:00</span>
+        <p class="p-live-text" id="live-text">Listening…</p>
+      </div>
+      <div class="p-controls">
+        <button class="p-chip" id="new-q">New question</button>
+        <button class="p-mic" id="mic" aria-label="Start answering">
+          <svg viewBox="0 0 24 24" width="28" height="28"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="p-chip" id="send-coach" disabled>Send to coach</button>
+      </div>
+      <p class="p-hint" id="hint">Tap the mic to answer</p>
+    </footer>
+  </div>
+  <script type="module" src="js/peer.js"></script>
+</body>
+</html>

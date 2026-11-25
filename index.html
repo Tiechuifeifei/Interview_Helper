@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interview Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="vendor/supabase/supabase.js"></script>
+</head>
+<body>
+  <div id="demo"></div>
+  <main class="home">
+    <header class="home-top">
+      <div class="brand">Interview Coach <span>· video interview practice</span></div>
+      <nav id="nav"></nav>
+    </header>
+
+    <section id="signin" class="hidden">
+      <h1>Sign in to practise</h1>
+      <p class="lede">We'll email you a sign-in link. No password needed.</p>
+      <div class="panel">
+        <form id="signin-form" class="row">
+          <input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+          <button class="btn" type="submit">Email me a link</button>
+        </form>
+        <p class="hint" id="signin-msg"></p>
+      </div>
+    </section>
+
+    <section id="main" class="hidden">
+      <h1>Practise video interviews the way they actually feel.</h1>
+      <p class="lede">Choose who you want to practise with. An assessor recreates the pressure of a real one-way interview. A friend helps you find your story without it.</p>
+
+      <div class="modes">
+        <a class="mode-card expert" href="expert.html">
+          <span class="kicker">Mock interview</span>
+          <h2>Practise with an assessor</h2>
+          <p>A strict, timed simulation of a one-way video interview.</p>
+          <ul>
+            <li>Camera stays on. You must stay in the frame.</li>
+            <li>30 seconds to prepare, up to 2 minutes to answer</li>
+            <li>No retakes. Feedback at the end.</li>
+            <li>Direct, demanding notes on your answers</li>
+          </ul>
+          <span class="go">Begin mock interview →</span>
+        </a>
+        <a class="mode-card peer" href="peer.html">
+          <span class="kicker">Practice chat</span>
+          <h2>Practise with a friend</h2>
+          <p>A relaxed chat with Mia, who's been through it before.</p>
+          <ul>
+            <li>Voice only is fine. Camera on or off, your call.</li>
+            <li>No timer pressure, retry as often as you like</li>
+            <li>Friendly feedback after every answer</li>
+          </ul>
+          <span class="go">Start chatting →</span>
+        </a>
+      </div>
+
+      <div class="home-section">
+        <h3>How feedback works</h3>
+        <div class="principles">
+          <div><b>Content, not character</b>The AI comments on what you said: structure, relevance, evidence. It never judges your emotions or personality.</div>
+          <div><b>Your coach sees the rest</b>If you submit a session, your Treetree coach watches the recording with delivery measurements and writes back to you.</div>
+          <div><b>You decide what to share</b>Practise as much as you like. Nothing reaches your coach until you press "Submit to coach".</div>
+        </div>
+      </div>
+
+      <div class="home-section" id="settings-section">
+        <h3 id="settings">Settings</h3>
+        <div class="panel" id="settings-panel"></div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

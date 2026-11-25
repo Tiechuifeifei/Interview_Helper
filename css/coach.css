@@ -1,0 +1,76 @@
+body.coach { background: #f4f3ef; }
+.c-bar { display: flex; justify-content: space-between; align-items: center; height: 56px; padding: 0 24px; background: #fff; border-bottom: 1px solid #e5e2da; font-size: 14px; }
+.c-bar .brand { text-decoration: none; }
+.c-bar #who { color: #6b7079; }
+.c-layout { display: grid; grid-template-columns: 300px 1fr; min-height: calc(100vh - 56px); }
+@media (max-width: 900px) { .c-layout { grid-template-columns: 1fr; } }
+.c-list { border-right: 1px solid #e5e2da; background: #fbfaf7; padding: 16px; }
+.c-filter { width: 100%; margin-bottom: 14px; }
+.c-filter button { flex: 1; white-space: nowrap; font-size: 13px; padding: 8px 6px; }
+.c-item { display: block; width: 100%; text-align: left; border: 1px solid transparent; background: transparent; border-radius: 10px; padding: 12px; margin-bottom: 4px; }
+.c-item:hover { background: #fff; border-color: #ebe8e1; }
+.c-item.on { background: #fff; border-color: #d8d4cb; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.c-item b { display: block; font-size: 14.5px; }
+.c-item small { color: #7a7f88; font-size: 12.5px; }
+.badge { display: inline-block; font-size: 11px; font-weight: 600; border-radius: 4px; padding: 2px 7px; margin-right: 6px; vertical-align: 1px; }
+.badge.expert { background: #1d232b; color: #fff; }
+.badge.peer { background: #ffe1d4; color: #b8482a; }
+.badge.status-submitted { background: #fff1c7; color: #7a5a00; }
+.badge.status-reviewed { background: #d9f2e4; color: #1f6b44; }
+.badge.status-draft { background: #eceae4; color: #666; }
+.c-none { color: #8a8f98; font-size: 14px; padding: 12px; }
+
+.c-detail { padding: 26px 30px 140px; min-width: 0; }
+.c-empty { color: #8a8f98; margin-top: 20vh; text-align: center; }
+.c-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.c-head h1 { font-size: 24px; margin: 0 0 4px; letter-spacing: -.015em; }
+.c-head p { margin: 0; color: #6b7079; font-size: 14px; }
+.c-tabs { display: flex; gap: 6px; border-bottom: 1px solid #e5e2da; margin-bottom: 20px; overflow-x: auto; }
+.c-tabs button { border: 0; background: none; padding: 10px 14px; font-size: 14px; color: #6b7079; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.c-tabs button.on { color: #1c1f23; border-bottom-color: #1c1f23; font-weight: 600; }
+.c-tabs .has-note::after { content: ' ●'; color: #1f7a4d; font-size: 10px; }
+
+.c-q { font-size: 17px; font-weight: 600; margin: 0 0 16px; line-height: 1.4; }
+.c-q small { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: #8a8f98; font-weight: 600; margin-bottom: 4px; }
+.c-main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr); gap: 22px; align-items: start; }
+@media (max-width: 1180px) { .c-main { grid-template-columns: 1fr; } }
+.c-player { background: #111; border-radius: 10px; overflow: hidden; }
+.c-player video { width: 100%; aspect-ratio: 4 / 3; background: #000; }
+.c-player audio { width: 100%; padding: 16px; }
+.c-novideo { color: #aaa; padding: 40px; text-align: center; font-size: 14px; }
+.c-timeline { position: relative; height: 34px; background: #1b1e22; cursor: pointer; }
+.c-timeline .speech { position: absolute; top: 13px; height: 8px; background: #59626e; }
+.c-timeline .ev { position: absolute; top: 6px; height: 22px; border-radius: 3px; opacity: .9; }
+.c-timeline .ev.pause { background: #8a93a0; }
+.c-timeline .ev.look-away { background: #e2a33b; }
+.c-timeline .ev.out-of-frame { background: #e5484d; }
+.c-timeline .head { position: absolute; top: 0; bottom: 0; width: 2px; background: #fff; pointer-events: none; }
+.c-legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 10px 14px; font-size: 12px; color: #b9bec6; background: #16191d; }
+.c-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.c-events { list-style: none; margin: 0; padding: 8px 14px 14px; background: #16191d; max-height: 160px; overflow: auto; }
+.c-events li { font-size: 13px; color: #d5d9de; padding: 4px 0; cursor: pointer; }
+.c-events li:hover { color: #fff; }
+.c-events li span { font-variant-numeric: tabular-nums; color: #8f98a3; margin-right: 8px; }
+
+.card { background: #fff; border: 1px solid #e5e2da; border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
+.card h4 { margin: 0 0 10px; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: #7a7f88; }
+.card .caveat { font-size: 12.5px; color: #7a7f88; margin: -4px 0 12px; }
+.m-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.m-table td { padding: 7px 0; border-top: 1px solid #f0ede6; vertical-align: top; }
+.m-table td:first-child { color: #555b63; padding-right: 10px; }
+.m-table td:first-child small { display: block; color: #9a9ea6; font-size: 11.5px; }
+.m-table td:last-child { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.m-table tr.group td { text-align: left !important; border-top: 0; padding-top: 14px; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #9a9ea6; font-weight: 600; }
+.c-transcript { font-size: 14.5px; color: #33373d; white-space: pre-wrap; margin: 0; }
+.ai-draft p { margin: 0 0 8px; font-size: 14px; }
+.ai-draft ul { margin: 0 0 8px; padding-left: 18px; font-size: 14px; }
+.ai-draft .label { font-size: 12px; color: #7a7f88; font-weight: 600; }
+.c-note textarea, .c-overall textarea { width: 100%; min-height: 110px; border: 1px solid #d5d2ca; border-radius: 8px; padding: 10px 12px; font: inherit; font-size: 14.5px; resize: vertical; }
+.c-note .row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.linkbtn { border: 0; background: none; color: #3b5bdb; font-size: 13px; padding: 0; }
+
+.c-overall { position: fixed; bottom: 0; right: 0; left: 300px; background: #fff; border-top: 1px solid #e5e2da; padding: 14px 30px; display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: end; z-index: 4; }
+@media (max-width: 900px) { .c-overall { left: 0; } }
+.c-overall textarea { min-height: 62px; }
+.c-overall label { display: block; font-size: 12px; font-weight: 600; color: #555b63; margin-bottom: 6px; }
+.c-sent { background: #eef8f2; border: 1px solid #cfe9da; color: #1f5f3d; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 16px; }

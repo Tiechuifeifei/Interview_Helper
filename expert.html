@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mock Interview · Interview Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/expert.css">
+  <script src="vendor/supabase/supabase.js"></script>
+</head>
+<body class="expert">
+  <div id="demo"></div>
+  <header class="x-bar">
+    <div class="x-brand">MOCK INTERVIEW <span>Assessor</span></div>
+    <div class="x-status" id="x-status"></div>
+    <a class="x-exit" href="index.html" id="exit">Exit</a>
+  </header>
+
+  <!-- 1. Briefing -->
+  <section class="x-screen" id="s-intro">
+    <div class="x-brief">
+      <p class="x-label">Briefing</p>
+      <h1>This session simulates a one-way video interview.</h1>
+      <p class="x-sub">Treat it as the real assessment. Sit upright, remove distractions and make sure your face is well lit.</p>
+      <dl class="x-rules">
+        <div><dt id="r-count">3</dt><dd>questions, each from a different competency</dd></div>
+        <div><dt id="r-prep">30s</dt><dd>preparation time per question</dd></div>
+        <div><dt>2:00</dt><dd>maximum answer time. Recording starts automatically.</dd></div>
+        <div><dt>0</dt><dd>retakes permitted</dd></div>
+      </dl>
+      <ul class="x-reqs">
+        <li>Your camera must remain on for the entire session.</li>
+        <li>You must stay within the frame. Leaving it will be flagged.</li>
+        <li>Questions are read aloud. Feedback is given only at the end.</li>
+      </ul>
+      <label class="x-check"><input type="checkbox" id="tts" checked> Read questions aloud</label>
+      <button class="x-btn" id="to-check">Continue to camera check</button>
+    </div>
+  </section>
+
+  <!-- 2. Camera & framing check -->
+  <section class="x-screen hidden" id="s-check">
+    <div class="x-grid">
+      <div class="x-stage">
+        <div class="x-video-wrap" id="video-wrap">
+          <video id="video" autoplay muted playsinline></video>
+          <svg class="x-guide" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
+            <path class="corner" d="M100 36 h-16 v16 M300 36 h16 v16 M100 264 h-16 v-16 M300 264 h16 v-16"/>
+          </svg>
+          <svg class="x-silhouette" viewBox="0 0 400 300" aria-hidden="true">
+            <ellipse cx="200" cy="128" rx="58" ry="74"/>
+            <path d="M92 300 C 100 236, 150 214, 200 214 C 250 214, 300 236, 308 300"/>
+          </svg>
+          <div class="x-warning hidden" id="frame-warning">Return to the frame</div>
+          <div class="x-rec hidden" id="rec"><i></i> REC</div>
+        </div>
+      </div>
+      <aside class="x-side" id="check-side">
+        <p class="x-label">System check</p>
+        <h2>Position yourself inside the frame</h2>
+        <p class="x-sub">Head and shoulders visible, face centred, eyes level with the camera.</p>
+        <ul class="x-checks">
+          <li id="c-cam"><span class="dot"></span>Camera</li>
+          <li id="c-mic"><span class="dot"></span>Microphone <span class="meter"><i id="mic-meter"></i></span></li>
+          <li id="c-face"><span class="dot"></span>Face detected</li>
+          <li id="c-frame"><span class="dot"></span>Centred in frame</li>
+        </ul>
+        <p class="x-sub small" id="check-msg">Say a few words to test your microphone.</p>
+        <button class="x-btn" id="begin" disabled>Begin interview</button>
+      </aside>
+
+      <aside class="x-side hidden" id="q-side">
+        <div class="x-phase"><span id="phase-label">Preparation</span><span class="x-qnum" id="q-num"></span></div>
+        <div class="x-timer" id="timer">00:30</div>
+        <div class="x-progress"><i id="progress"></i></div>
+        <p class="x-cat" id="q-cat"></p>
+        <h2 class="x-question" id="q-text"></h2>
+        <p class="x-sub small" id="phase-hint">Recording will begin automatically when preparation ends.</p>
+        <div class="x-actions">
+          <button class="x-btn ghost" id="start-now">Start answering now</button>
+          <button class="x-btn hidden" id="finish" disabled>Finish answer</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 3. Interstitial -->
+  <section class="x-screen hidden" id="s-wait">
+    <div class="x-wait">
+      <div class="x-spinner"></div>
+      <p id="wait-text">Response recorded.</p>
+    </div>
+  </section>
+
+  <!-- 4. Results -->
+  <section class="x-screen hidden" id="s-results">
+    <div class="x-report" id="report"></div>
+  </section>
+
+  <script type="module" src="js/expert.js"></script>
+</body>
+</html>
